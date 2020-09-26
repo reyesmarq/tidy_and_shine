@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const IndexPage = () => {
   return (
-    <main>
+    <main className="font-Gilroy-Black">
       <Head>
         <title>Tidy and Shine | landing page</title>
         <meta

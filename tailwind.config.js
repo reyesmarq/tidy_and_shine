@@ -6,7 +6,10 @@ module.exports = {
   purge: [],
   theme: {
     extend: {},
+    fontFamily: {
+      'Gilroy-Black': ['Gilroy-Bold'],
+    },
   },
   variants: {},
   plugins: [],
-}
+};
