@@ -1,5 +1,19 @@
-const IndexPage = () => {
-  return <h1>Index page</h1>
-}
+import Head from 'next/head';
 
-export default IndexPage
+const IndexPage = () => {
+  return (
+    <main>
+      <Head>
+        <title>Tidy and Shine | landing page</title>
+        <meta
+          name="description"
+          content="This is the description of the landing page"
+        />
+      </Head>
+
+      <h1>Tidy and Shine</h1>
+    </main>
+  );
+};
+
+export default IndexPage;

@@ -1,0 +1,6 @@
+/* This will ensure you don’t accidentally purge important base styles when working with Next.js */
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+/* purgecss end ignore */
+@import 'tailwindcss/utilities';
