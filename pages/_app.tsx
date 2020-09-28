@@ -1,4 +1,4 @@
-import '../styles/tailwind.css';
+import '../styles/bulma.scss';
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app';
 

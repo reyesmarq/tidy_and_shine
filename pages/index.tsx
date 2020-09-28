@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { Navbar } from '../components/Navbar';
 
 const IndexPage = () => {
   return (
-    <main className="font-Gilroy-Black">
+    <main>
       <Head>
         <title>Tidy and Shine | landing page</title>
         <meta
@@ -11,7 +12,7 @@ const IndexPage = () => {
         />
       </Head>
 
-      <h1>Tidy and Shine</h1>
+      <Navbar />
     </main>
   );
 };
