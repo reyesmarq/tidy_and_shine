@@ -3,16 +3,11 @@ import Button from 'trunx/component/Button';
 import Buttons from 'trunx/component/Buttons';
 import Container from 'trunx/component/Container';
 
-let navbarItem: React.CSSProperties = {
-  marginRight: '40px'
-}
-
 const Nav = () => (
   <Navbar
     style={{
       width: '100%',
       height: '200px',
-      border: '1px solid red',
     }}
   >
     <Container>
@@ -31,7 +26,10 @@ const Nav = () => (
       <Navbar.Menu>
         <Navbar.End>
           <Navbar.Item>
-            <div className="navbar-items-main" style={{display: 'flex', borderBottom: "1px solid black"}}>
+            <div
+              className="navbar-items-main"
+              style={{ display: 'flex', borderBottom: '1px solid black' }}
+            >
               <Navbar.Item>Home</Navbar.Item>
               <Navbar.Item>About us</Navbar.Item>
               <Navbar.Item>Services</Navbar.Item>
@@ -40,7 +38,7 @@ const Nav = () => (
             </div>
 
             <Buttons>
-              <Button isInfo isSmall style={{marginLeft: '50px'}}>
+              <Button isInfo isSmall style={{ marginLeft: '50px' }}>
                 {'Booking'.toUpperCase()}
               </Button>
             </Buttons>
