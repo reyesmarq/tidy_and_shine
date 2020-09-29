@@ -2,6 +2,10 @@
 
 $family-sans-serif: 'Gilroy', sans-serif;
 
+// changing the container size
+$gap: 32px;
+$container-offset: (10 * $gap);
+
 // Import only what you need from Bulma
 @import '../node_modules/bulma/sass/utilities/_all.sass';
 @import '../node_modules/bulma/sass/base/_all.sass';
