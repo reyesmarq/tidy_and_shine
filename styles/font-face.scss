@@ -6,3 +6,21 @@
   src: local('Gilroy Regular'), local('Gilroy-Regular'),
     url('../public/fonts/Gilroy-Regular.otf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('Gilroy Bold'), local('Gilroy-Bold'),
+    url('../public/fonts/Gilroy-Bold.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: local('Gilroy Light'), local('Gilroy-Light'),
+    url('../public/fonts/Gilroy-Light.otf') format('truetype');
+}

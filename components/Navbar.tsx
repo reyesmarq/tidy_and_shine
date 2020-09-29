@@ -7,13 +7,13 @@ const Navbar = () => (
   >
     <div className="container">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width={112}
-            height={28}
-          />
-        </a>
+        <img
+          src="/images/logo_hotizontal.svg"
+          style={{
+            width: '70%',
+            marginLeft: '30px',
+          }}
+        />
         <a
           role="button"
           className="navbar-burger burger"
@@ -51,8 +51,13 @@ const Navbar = () => (
           <div className="navbar-item">
             <div className="buttons">
               <button
-                className="button is-info is-small"
-                style={{ marginLeft: '20px', borderRadius: '0' }}
+                className="button is-link is-small"
+                style={{
+                  marginLeft: '10px',
+                  borderRadius: '0',
+                  paddingLeft: '17px',
+                  paddingRight: '17px',
+                }}
               >
                 BOOKING
               </button>
