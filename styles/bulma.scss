@@ -1,20 +1,13 @@
-// @import './font-face.scss';
+@import './font-face.scss';
 
-// $family-sans-serif: 'Gilroy', sans-serif;
+$family-sans-serif: 'Gilroy', sans-serif;
 
-// // changing the container size
-// $gap: 32px;
-// $container-offset: (10 * $gap);
+// changing the container size
+$gap: 32px;
+$container-offset: (10 * $gap);
 
-// // Import only what you need from Bulma
-// @import '../node_modules/bulma/sass/utilities/_all.sass';
-// @import '../node_modules/bulma/sass/base/_all.sass';
-// @import '../node_modules/bulma/sass/elements/button.sass';
-// @import '../node_modules/bulma/sass/elements/container.sass';
-// @import '../node_modules/bulma/sass/form/_all.sass';
-// @import '../node_modules/bulma/sass/elements/title.sass';
-// @import '../node_modules/bulma/sass/components/navbar.sass';
-// @import '../node_modules/bulma/sass/layout/hero.sass';
-// @import '../node_modules/bulma/sass/layout/section.sass';
+.navbar-items-main > * {
+  margin-right: 10px;
+}
 
 @import 'bulma/bulma';
