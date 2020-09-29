@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Nav } from '../components/Nav';
+import Navbar from '../components/Navbar';
 
 const IndexPage = () => {
   return (
@@ -12,7 +12,7 @@ const IndexPage = () => {
         />
       </Head>
 
-      <Nav />
+      <Navbar />
     </main>
   );
 };
