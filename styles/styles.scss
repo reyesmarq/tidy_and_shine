@@ -34,7 +34,8 @@
 //// these are all of the little peaces of ui of your interface, such buttons, tables, menus, login, modals, etc.
 //// You need to create additional files per component
 // ============================================
-@import 'components/navbar';
+@import './components/navbar';
+@import './components/heroland';
 
 // Theme
 //// This is what defines a project visually. LOOK & FEEL.

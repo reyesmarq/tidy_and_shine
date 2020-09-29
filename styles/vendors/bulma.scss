@@ -11,14 +11,9 @@ $fullhd: 1344px + (2 * $gap);
 $size-1: 3.95rem;
 $size-5: 1.2rem;
 
+
 $primary: rgb(42, 112, 158);
 $link: rgb(47, 150, 187);
-
-
-
-.is-hero-land {
-  background: url('/images/hero_land.jpg') center / cover no-repeat;
-}
 
 // Import only what you need from Bulma
 @import '../node_modules/bulma/sass/utilities/_all.sass';

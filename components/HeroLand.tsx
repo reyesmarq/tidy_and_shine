@@ -52,7 +52,7 @@ const HeroLand = () => (
   //     </div>
   //   </div>
   // </div>
-  <section className="hero is-large is-hero-land">
+  <section className="hero is-large _heroland">
     <div className="hero-body">
       <div className="container">
         <h2 className="title is-1">The Best Cleaning Service in Texas</h2>

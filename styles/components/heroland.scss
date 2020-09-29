@@ -1,0 +1,38 @@
+._heroland {
+  background: url('/images/hero_land.jpg') center / cover no-repeat;
+
+  .hero-body {
+    .title.is-1 {
+      @include mq($desktop) {
+        line-height: 1.05 !important;
+        width: 98%;
+      }
+    }
+    
+    p.is-size-5 {
+      @include mq($desktop) {
+        margin-top: -14px;
+        line-height: 1.24;
+        margin-bottom: 52px;
+      }
+    }
+
+    button.button {
+      font-weight: bold;
+      height: 80px;
+      padding: 20px;
+      border-radius: 0;
+    }
+
+    @include mq($desktop) {
+      // margin-top: -10px;
+      padding-top: 0 !important;
+      margin-left: 13.5%;
+      width: 22%;
+    }
+  }
+
+  @include mq($desktop) {
+    max-height: 630px;
+  }
+}
