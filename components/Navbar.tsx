@@ -1,19 +1,12 @@
 const Navbar = () => (
   <nav
-    className="navbar"
+    className="navbar _navbar"
     role="navigation"
     aria-label="main navigation"
-    style={{ paddingBottom: '75px', paddingTop: '75px' }}
   >
     <div className="container">
       <div className="navbar-brand">
-        <img
-          src="/images/logo_hotizontal.svg"
-          style={{
-            width: '70%',
-            marginLeft: '30px',
-          }}
-        />
+        <img src="/images/logo_hotizontal.svg" />
         <a
           role="button"
           className="navbar-burger burger"
@@ -28,39 +21,16 @@ const Navbar = () => (
       </div>
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-end">
-          <div
-            className="navbar-items"
-            style={{ display: 'flex', borderBottom: '1px solid black' }}
-          >
-            <a className="navbar-item" style={{ marginRight: '15px' }}>
-              Home
-            </a>
-            <a className="navbar-item" style={{ marginRight: '15px' }}>
-              About us
-            </a>
-            <a className="navbar-item" style={{ marginRight: '15px' }}>
-              Services
-            </a>
-            <a className="navbar-item" style={{ marginRight: '15px' }}>
-              Reviews
-            </a>
-            <a className="navbar-item" style={{ marginRight: '15px' }}>
-              About our team
-            </a>
+          <div className="navbar-items">
+            <a className="navbar-item">Home</a>
+            <a className="navbar-item">About us</a>
+            <a className="navbar-item">Services</a>
+            <a className="navbar-item">Reviews</a>
+            <a className="navbar-item">About our team</a>
           </div>
           <div className="navbar-item">
             <div className="buttons">
-              <button
-                className="button is-link is-small"
-                style={{
-                  marginLeft: '10px',
-                  borderRadius: '0',
-                  paddingLeft: '17px',
-                  paddingRight: '17px',
-                }}
-              >
-                BOOKING
-              </button>
+              <button className="button is-link is-small">BOOKING</button>
             </div>
           </div>
         </div>

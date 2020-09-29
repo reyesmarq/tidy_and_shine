@@ -1,4 +1,4 @@
-import '../styles/bulma.scss';
+import '../styles/styles.scss';
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app';
 

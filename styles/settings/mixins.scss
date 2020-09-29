@@ -1,0 +1,8 @@
+// media queries
+//// Going to use the variables located at /styles/vendors/bulma
+// ============================================
+@mixin mq($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

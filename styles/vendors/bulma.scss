@@ -1,24 +1,23 @@
-@import './font-face.scss';
 
 $family-sans-serif: 'Gilroy', sans-serif;
-
-// changing the container size
 $gap: 32px;
 $container-offset: (10 * $gap);
+
+$tablet: 769px;
+$desktop: 960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);
 
 $size-1: 3.95rem;
 $size-5: 1.2rem;
 
-// Colors
 $primary: rgb(42, 112, 158);
 $link: rgb(47, 150, 187);
 
-.navbar-items-main > * {
-  margin-right: 10px;
-}
 
-[aria-label='main navigation'] {
-  background-color: transparent !important;
+
+.is-hero-land {
+  background: url('/images/hero_land.jpg') center / cover no-repeat;
 }
 
 // Import only what you need from Bulma
