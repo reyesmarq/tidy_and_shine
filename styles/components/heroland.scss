@@ -1,4 +1,5 @@
 ._heroland {
+  position: relative;
   background: url('/images/hero_land.jpg') center / cover no-repeat;
 
   .hero-body {
@@ -8,9 +9,10 @@
         width: 98%;
       }
     }
-    
+
     p.is-size-5 {
       @include mq($desktop) {
+        font-weight: lighter;
         margin-top: -14px;
         line-height: 1.24;
         margin-bottom: 52px;
@@ -32,7 +34,24 @@
     }
   }
 
+  &::before {
+    @include mq($desktop) {
+      content: '';
+      position: absolute;
+      height: 630px;
+      width: 54%;
+      left: 39%;
+      // background-color: linear-gradient(to right, transparent 50%, red 50%);
+      background-image: url('/images/hero_land.jpg'),
+        linear-gradient(to right, transparent 89%, $primary 89%);
+      background-size: cover;
+      background-position: -120px, 0;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+    }
+  }
+  
   @include mq($desktop) {
-    max-height: 630px;
+    background: none;
   }
 }
