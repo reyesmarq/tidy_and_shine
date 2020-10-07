@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import HeroLand from '../components/HeroLand';
-import Navbar from '../components/Navbar';
+import Landing from '../components/Landing';
 
 const IndexPage = () => {
   return (
@@ -13,8 +12,7 @@ const IndexPage = () => {
         />
       </Head>
 
-      <Navbar />
-      <HeroLand />
+      <Landing />
     </main>
   );
 };

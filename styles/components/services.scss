@@ -1,0 +1,51 @@
+._services-container {
+  background: radial-gradient(52vw 52vw at 5% 280%, $circle-background 50%, transparent 50%);
+}
+
+._services {
+  ul {
+    border-bottom: none;
+    li a {
+      border-bottom: none !important;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+}
+
+@media screen and (min-width: $desktop) {
+}
+
+@media screen and (min-width: $widescreen) {
+}
+
+@media screen and (min-width: $fullhd) {
+  ._services {
+    padding-top: 30px;
+    margin-top: -12px;
+    margin-left: 205px;
+    // margin-bottom: -10px;
+
+    h2.title.is-1 {
+      margin-right: 30px;
+      padding-top: 10px;
+    }
+
+    ul {
+      li {
+        &.is-active {
+          a {
+            color: $primary;
+          }
+        }
+
+        a {
+          font-weight: bold;
+          font-size: 27px;
+          color: $link;
+        }
+      }
+    }
+  }
+}

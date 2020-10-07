@@ -1,0 +1,61 @@
+._reviews-container {
+  background: url('/images/reviews.jpg') center / cover;
+}
+
+@media screen and (min-width: $tablet) {
+}
+@media screen and (min-width: $desktop) {
+}
+@media screen and (min-width: $widescreen) {
+}
+
+@media screen and (min-width: $fullhd) {
+  ._reviews-container {
+    margin-top: -12px;
+    height: 420px;
+
+    .hero-body {
+      height: 470px;
+      margin-bottom: 30px;
+
+      .container {
+        h2.button {
+          margin-top: 240px;
+          font-weight: bold;
+          padding: 0 24px;
+          height: auto;
+          border-radius: 0;
+          height: 80px;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+  ._reviews_content {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+    width: 60%;
+    box-shadow: inset 35px 0 $link;
+    height: 300px;
+    background-color: $circle-background;
+  }
+  blockquote {
+    padding-top: 35px;
+    padding-right: 60px;
+    padding-left: 100px;
+
+    h4.title {
+      font-size: 60px;
+    }
+
+    p {
+      margin-top: -10px;
+      font-weight: lighter;
+      font-size: $size-5 * 1.1 !important;
+      margin-bottom: 20px;
+      line-height: 1.23;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+._about_our_team {
+  margin-top: 0;
+
+  .column:nth-child(2) {
+    height: 400px;
+    background: url('/images/about_team.jpg') center / cover;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  ._about_our_team {
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (min-width: $desktop) {
+}
+
+@media screen and (min-width: $widescreen) {
+}
+
+@media screen and (min-width: $fullhd) {
+  ._about_our_team {
+    margin-top: -12px;
+    margin-bottom: 0 !important;
+
+    .column:nth-child(1) {
+      div {
+        padding-top: 25px;
+        padding-left: 65px;
+        width: 100%;
+      }
+
+      h3.title {
+        font-size: 60px;
+        width: 450px;
+        line-height: 1;
+        // font-weight: bold;
+        // padding-left: 10px;
+        // color: $link;
+        // font-size: 25px;
+      }
+
+      .text-content {
+        padding: 20px 0 0 35px !important;
+        height: 380px;
+        width: 470px;
+      }
+
+      p.is-size-5 {
+        font-weight: lighter;
+        font-size: $size-5 * 1.1 !important;
+        margin-bottom: 55px;
+        width: 400px;
+        line-height: 1.23;
+        margin-top: -25px;
+      }
+
+      button.button {
+        margin-top: 90px;
+        margin-left: 150px;
+        display: block;
+        font-size: $size-5 * 1.1 !important;
+        padding: 0 15px;
+        border-radius: 0;
+        height: 40px;
+      }
+    }
+
+    .column:nth-child(2) {
+      height: 585px;
+    }
+  }
+}

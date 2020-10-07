@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/css/all.css'
 import '../styles/styles.scss';
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app';

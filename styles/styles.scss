@@ -11,7 +11,7 @@
 // Settings
 // ============================================
 // @import 'settings/placeholders';
-// @import 'settings/functions';
+@import 'settings/functions';
 // @import 'settings/variables';
 @import 'settings/mixins';
 
@@ -35,7 +35,15 @@
 //// You need to create additional files per component
 // ============================================
 @import './components/navbar';
-@import './components/heroland';
+@import './components/mainhero';
+@import './components/aboutus';
+@import './components/scrollbar';
+@import './components/services';
+@import './components/servicesCarousel';
+@import './components/reviews';
+@import './components/about_team';
+@import './components/card-section';
+@import './components/footer';
 
 // Theme
 //// This is what defines a project visually. LOOK & FEEL.
@@ -49,3 +57,8 @@
 //// Therefore when you are about to resolve it, you know where to find it.
 // ============================================
 // @import 'hacks/hacks';
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }

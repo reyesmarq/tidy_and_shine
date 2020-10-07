@@ -1,0 +1,58 @@
+._mainhero {
+  position: relative;
+  background: url('/images/hero_land.jpg') center / cover no-repeat;
+
+}
+
+@media screen and (min-width: $tablet) {
+}
+@media screen and (min-width: $desktop) {
+}
+@media screen and (min-width: $widescreen) {
+}
+@media screen and (min-width: $fullhd) {
+  ._mainhero {
+    height: 638px;
+    padding-top: 0 !important;
+    background: none;
+    
+    .hero-body {
+      padding: 0 !important;
+      padding-left: 235px !important;
+    }
+
+    .title.is-1 {
+      line-height: 1.06 !important;
+      width: 280px;
+    }
+
+    p.is-size-5 {
+      font-weight: lighter;
+      margin-top: -6px;
+      line-height: 1.24;
+      margin-bottom: 52px;
+      width: 290px;
+    }
+
+    button.button {
+      font-weight: bold;
+      height: 80px;
+      padding: 20px;
+      border-radius: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 54%;
+      left: 39%;
+      background-image: url('/images/hero_land.jpg'),
+        linear-gradient(to right, transparent 89%, $primary 89%);
+      background-size: cover;
+      background-position: -120px, 0;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+    }
+  }
+}

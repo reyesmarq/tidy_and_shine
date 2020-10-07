@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "perfect-pixel[please delete]": "x:0, y:0 ↑:0.959",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "bulma": "^0.9.1",
     "next": "^9.5.3",
     "react": "^16.13.1",
