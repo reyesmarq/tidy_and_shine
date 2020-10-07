@@ -34,11 +34,11 @@ const Landing = () => {
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-end">
             <div className="navbar-item _items">
-              <a className="navbar-item">Home</a>
-              <a className="navbar-item">About us</a>
-              <a className="navbar-item">Services</a>
-              <a className="navbar-item">Reviews</a>
-              <a className="navbar-item">About our team</a>
+              <a href="#home" className="navbar-item">Home</a>
+              <a href="#aboutUs" className="navbar-item">About us</a>
+              <a href="#services" className="navbar-item">Services</a>
+              <a href="#reviews" className="navbar-item">Reviews</a>
+              <a href="#aboutTeam" className="navbar-item">About our team</a>
             </div>
             <div className="navbar-item">
               <div className="buttons">
@@ -50,7 +50,7 @@ const Landing = () => {
       </nav>
       {/* End Navbar */}
       {/* Main Hero */}
-      <section className="hero is-medium _mainhero">
+      <section className="hero is-medium _mainhero" id="home">
         <div className="hero-body">
           <h2 className="title is-1">The Best Cleaning Service in Texas</h2>
           <p className="is-size-5">
@@ -65,7 +65,7 @@ const Landing = () => {
       </section>
       {/* End Main Hero */}
       {/* About us */}
-      <div className="columns _aboutus" id="aboutus">
+      <div className="columns _aboutus" id="aboutUs">
         <div className="column">
           <div>
             <button className="button is-large is-link">About us</button>
@@ -97,7 +97,7 @@ const Landing = () => {
       </div>
       {/* End About us */}
       {/* Services */}
-      <div className="_services-container">
+      <div className="_services-container" id="services">
         <div className="tabs is-large _services">
           <h2 className="title is-1">Services</h2>
           <ul>
@@ -150,7 +150,7 @@ const Landing = () => {
       </div>
       {/* End Services carousel */}
       {/* Reviews Banner */}
-      <section className="_reviews-container">
+      <section className="_reviews-container" id="reviews">
         <div className="hero is-medium _reviews">
           <div className="hero-body">
             <div className="container">
@@ -175,7 +175,7 @@ const Landing = () => {
       </div>
       {/* End Reviews Content */}
       {/* Our Team */}
-      <div className="columns _about_our_team">
+      <div className="columns _about_our_team" id="aboutTeam">
         <div className="column">
           <div>
             <h3 className="title">Know more about out team</h3>
@@ -264,22 +264,22 @@ const Landing = () => {
                 <aside className="menu">
                   <ul className="menu-list">
                     <li>
-                      <a>Home</a>
+                      <a href="#home">Home</a>
                     </li>
                     <li>
-                      <a>About us</a>
+                      <a href="#aboutUs">About us</a>
                     </li>
                     <li>
-                      <a>Services</a>
+                      <a href="#services">Services</a>
                     </li>
                     <li>
-                      <a>Reviews</a>
+                      <a href="#reviews">Reviews</a>
                     </li>
                     <li>
-                      <a>About out team</a>
+                      <a href="#aboutTeam">About out team</a>
                     </li>
                     <li>
-                      <a>Booking</a>
+                      <a href="">Booking</a>
                     </li>
                   </ul>
                 </aside>
