@@ -1,12 +1,15 @@
 ._card-section {
   background: lighten($link, 40%);
-  ._icon {
+  .icon {
+    width: 100%; 
+    height: 200px;
+    
     img {
-      // padding-left: 20px;
-      margin-left: 60px;
-      margin-top: 35px;
-      margin-bottom: 30px;
-      width: 100px;
+      // // padding-left: 20px;
+      // margin-left: 60px;
+      // margin-top: 35px;
+      // margin-bottom: 30px;
+      // width: 100px;
     }
   }
 }
@@ -51,11 +54,12 @@
             p.title {
               color: $link;
               padding-left: 10px;
+              padding-left: 50px;
               margin-bottom: 35px;
             }
 
             p.subtitle {
-              padding-left: 10px;
+              padding-left: 50px;
               width: 310px;
               font-weight: lighter;
               line-height: 1.1;

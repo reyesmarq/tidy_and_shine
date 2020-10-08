@@ -57,8 +57,7 @@
 //// Therefore when you are about to resolve it, you know where to find it.
 // ============================================
 // @import 'hacks/hacks';
-// * {
-//   background: #000 !important;
-//   color: #0f0 !important;
-//   outline: solid #f00 1px !important;
-// }
+$debug: false;
+* {
+  @include debug()
+}
