@@ -34,8 +34,8 @@
 //// these are all of the little peaces of ui of your interface, such buttons, tables, menus, login, modals, etc.
 //// You need to create additional files per component
 // ============================================
-@import './components/navbar';
-@import './components/mainhero';
+// @import './components/navbar';
+@import './components/mainhero'; // navbar component is being included here
 @import './components/aboutus';
 @import './components/scrollbar';
 @import './components/services';

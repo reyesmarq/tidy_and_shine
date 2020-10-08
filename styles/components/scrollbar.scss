@@ -17,21 +17,8 @@
 html {
   scroll-behavior: smooth;
   background-image: radial-gradient(
-    52vw 52vw at 85% 5%,
+    52vw 52vw at 82% 15%,
     $circle-background 60%,
     transparent 60%
   );
-}
-
-.navbar {
-  transition: 0.6s;
-}
-
-.sticky {
-  // padding: 5px 100px;
-  width: 100%;
-  background: #fff !important;
-  position: fixed;
-  height: auto !important;
-  padding: 0;
 }

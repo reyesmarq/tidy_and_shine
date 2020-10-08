@@ -1,9 +1,33 @@
 ._navbar {
+  padding: 50px 235px 90px;
+  transition: 0.6s;
   background-color: transparent !important;
 
   img {
     width: 230px;
     height: auto;
+  }
+}
+
+// .sticky {
+//   width: 100%;
+//   // background: #fff !important;
+//   position: fixed;
+//   height: auto !important;
+//   padding: 0;
+//   transition: 0.6s;
+//   border: 1px solid black;
+
+//   .navbar-item {
+//     border-bottom: none !important;
+//   }
+// }
+
+.__mainhero {
+  background: transparent !important;
+
+  .hero-body {
+    margin-top: 200px;
   }
 }
 
@@ -18,13 +42,17 @@
 
 @media screen and (min-width: $fullhd) {
   ._navbar {
-    padding: 50px 235px 90px;
 
     .navbar-end {
       ._items {
         .navbar-item {
-          border-bottom: 1px solid black;
           padding-right: 30px;
+          border-bottom: 1px solid black;
+          
+          &.is-active {
+            background: $circle-background;
+            border-radius: 5px;
+          }
         }
       }
 

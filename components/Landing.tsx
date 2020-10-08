@@ -1,56 +1,129 @@
-import { useEffect } from 'react';
+import { getFontDefinitionFromNetwork } from 'next/dist/next-server/server/font-utils';
+import { useEffect, useState } from 'react';
 
 const Landing = () => {
+
+  // Effec to control the navbar at scroll
   useEffect(() => {
-    addEventListener('scroll', () => {
-      var navbar = document.getElementById('mainNavbar');
-      // navbar.classList.toggle('sticky', window.scrollY > 0);
-    });
+    const handleScrollY = () => {
+      var navbar = document.getElementById('navbar');
+      navbar.classList.toggle('sticky', window.scrollY > 1);
+    };
+    addEventListener('scroll', handleScrollY);
+
+    return () => {
+      removeEventListener('scroll', handleScrollY);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   // const handleScrollY = () => {
+  //   //   setScrollY(window.scrollY);
+  //   //   console.log(scrollY)
+  //   // };
+
+  //   window.addEventListener('scroll', () => {
+  //     // console.log('window.scrollY', window.scrollY);
+  //     // console.log('window.pageYOffset', window.pageYOffset);
+
+  //     // setScrollY(window.scrollY);
+  //     setScrollY(window.pageYOffset);
+
+  //     console.log(scrollY);
+  //   });
+
+  //   // return window.removeEventListener('scroll', handleScrollY);
+  // }, []);
+
+  // function logit() {
+  //   // setScrollY(window.pageYOffset);
+  //   setScrollY(window.scrollY);
+  //   console.log(scrollY)
+  //   var navbar = document.getElementById('mainNavbar');
+  //   if (scrollY != 0) {
+  //     navbar.classList.add('sticky')
+  //   } else {
+  //     navbar.classList.remove('sticky')
+  //   }
+
+  //   // navbar.classList.toggle('sticky', scrollY > 0);
+  // }
+
+  // useEffect(() => {
+  //   function watchScroll() {
+  //     window.addEventListener('scroll', logit);
+  //   }
+  //   watchScroll();
+  //   // return () => {
+  //   //   window.removeEventListener('scroll', logit);
+  //   // };
+  // });
+
+  // useEffect(() => {
+  //   let mainNavLinks = document.querySelectorAll(
+  //     'nav .navbar-menu .navbar-end .navbar-item a'
+  //   );
+
+  //   const handleScrollY: EventListener = () => {
+  //     let fromTop = window.scrollY;
+
+  //     mainNavLinks.forEach((link) => {
+  //       // @ts-ignore
+  //       let section = document.querySelector(link.hash);
+
+  //       if (
+  //         section.offsetTop <= fromTop &&
+  //         section.offsetTop + section.offsetHeight > fromTop
+  //       ) {
+  //         link.classList.add('is-active');
+  //       } else {
+  //         link.classList.remove('is-active');
+  //       }
+  //     });
+
+  //   }
+
+  //   window.addEventListener('scroll', handleScrollY);
+
+  //   return () => {
+  //     window.removeEventListener('scrol', handleScrollY)
+  //   }
+  // }, []);
 
   return (
     <div className="_landing">
-      {/* Navbar */}
-      <nav
-        className="navbar _navbar"
-        role="navigation"
-        aria-label="main navigation"
-        id="mainNavbar"
-      >
-        <div className="navbar-brand">
-          <img src="/images/logo_hotizontal.svg" />
-          <a
-            role="button"
-            className="navbar-burger burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-          </a>
-        </div>
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item _items">
-              <a href="#home" className="navbar-item">Home</a>
-              <a href="#aboutUs" className="navbar-item">About us</a>
-              <a href="#services" className="navbar-item">Services</a>
-              <a href="#reviews" className="navbar-item">Reviews</a>
-              <a href="#aboutTeam" className="navbar-item">About our team</a>
+      <section className="hero is-medium __mainhero">
+        <div className="hero-head">
+          <nav className="navbar is-fixed-top" id="navbar">
+            <div className="navbar-brand">
+              <img src="/images/logo_hotizontal.svg" alt="Logo" />
+              <span
+                className="navbar-burger burger"
+                data-target="navbarMenuHeroA"
+              >
+                <span />
+                <span />
+                <span />
+              </span>
             </div>
-            <div className="navbar-item">
-              <div className="buttons">
-                <button className="button is-link is-small">BOOKING</button>
+            <div id="navbarMenuHeroA" className="navbar-menu">
+              <div className="navbar-end">
+                <div className="navbar-item _items">
+                  <a className="navbar-item"> Home </a>
+                  <a className="navbar-item">About us</a>
+                  <a className="navbar-item">Services</a>
+                  <a className="navbar-item">Reviews</a>
+                  <a className="navbar-item">About our team</a>
+                </div>
+                <div className="navbar-item">
+                  <button className="button is-link">
+                    <span>BOOKING</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
-      </nav>
-      {/* End Navbar */}
-      {/* Main Hero */}
-      <section className="hero is-medium _mainhero" id="home">
         <div className="hero-body">
           <h2 className="title is-1">The Best Cleaning Service in Texas</h2>
           <p className="is-size-5">
@@ -63,200 +136,208 @@ const Landing = () => {
           </button>
         </div>
       </section>
-      {/* End Main Hero */}
       {/* About us */}
-      <div className="columns _aboutus" id="aboutUs">
-        <div className="column">
-          <div>
-            <button className="button is-large is-link">About us</button>
-            <p className="is-size-5">
-              Do you search the internet for the best and most reliable cleaning
-              services available? If so, then you will definitely find Tidy &
-              Shine as your best option. This company is your partner in making
-              your office spaces and homes a whole lot cleaner. Tidy & shine is
-              truly committed to giving you excellent cleaning. We have
-              continued to develop and expand our business into dynamic progress
-              based on a high standard of our work, competitive prices and
-              responsibility. Apart from our private residential clients we have
-              serviced and continue to service commercial clients and undertake
-              work on behalf of property management companies, major estate and
-              letting agents. Tidy & shine follows the best known techniques and
-              methods of cleaning in the industry together with keeping a close
-              eye on the competition and constantly developing new technologies.
-              Our cleaning services have been carefully mastered to perfection
-              throughout the years. We successfully cover all these Counties,
-              Denton, Collin, Dallas, Tarrant, Rockwall, Kaufman, Ellis,
-              Johnson, Hunt, Midland and more… Devoted to our clients we choose
-              only experienced cleaners who are trained to satisfy all personal
-              requirements. So when it comes to choosing professional cleaning
-              service at the right price, make sure you contact Tidy & Shine.
-            </p>
+      <section>
+        <div className="columns _aboutus" id="aboutUs">
+          <div className="column">
+            <div>
+              <button className="button is-large is-link">About us</button>
+              <p className="is-size-5">
+                Do you search the internet for the best and most reliable
+                cleaning services available? If so, then you will definitely
+                find Tidy & Shine as your best option. This company is your
+                partner in making your office spaces and homes a whole lot
+                cleaner. Tidy & shine is truly committed to giving you excellent
+                cleaning. We have continued to develop and expand our business
+                into dynamic progress based on a high standard of our work,
+                competitive prices and responsibility. Apart from our private
+                residential clients we have serviced and continue to service
+                commercial clients and undertake work on behalf of property
+                management companies, major estate and letting agents. Tidy &
+                shine follows the best known techniques and methods of cleaning
+                in the industry together with keeping a close eye on the
+                competition and constantly developing new technologies. Our
+                cleaning services have been carefully mastered to perfection
+                throughout the years. We successfully cover all these Counties,
+                Denton, Collin, Dallas, Tarrant, Rockwall, Kaufman, Ellis,
+                Johnson, Hunt, Midland and more… Devoted to our clients we
+                choose only experienced cleaners who are trained to satisfy all
+                personal requirements. So when it comes to choosing professional
+                cleaning service at the right price, make sure you contact Tidy
+                & Shine.
+              </p>
+            </div>
           </div>
+          <div className="column"></div>
         </div>
-        <div className="column"></div>
-      </div>
+      </section>
       {/* End About us */}
       {/* Services */}
-      <div className="_services-container" id="services">
-        <div className="tabs is-large _services">
-          <h2 className="title is-1">Services</h2>
-          <ul>
-            <li className="is-active">
-              <a>Standard</a>
-            </li>
-            <li>
-              <a>Premium</a>
-            </li>
-            <li>
-              <a>Additional Services</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* Services carousel */}
-      <div className="columns _service-carousel">
-        <div className="column">
-          <div>
-            <h3 className="title">
-              From $30/hour (min 3 hours per visit apply)
-            </h3>
-            <div className="text-content">
-              <p className="is-size-5">
-                Every time we clean we provide these services.
-              </p>
-
-              <p className="is-size-5">
-                Bathrooms, Tile walls, shower doors, vanity, sink, mirrors, and
-                chrome fixtures, floors, carpets, toilets, windows sills,
-                ledges, blinds and doors Kitchen & Eating area, Counter tops,
-                range hood, drip pans or glass, sink and chrome, microwave,
-                front of all appliances, cobwebs removed, floor damp mopped and
-                general dusting.
-              </p>
-
-              <p className="is-size-5">
-                Sleeping & leaving areas, Flat areas hand wiped, doors and door
-                frames spot cleaned, picture frames, ceiling fans, lamp shades,
-                intricate items, heavy knickknack areas, windows sills, ledges,
-                blinds and more…
-              </p>
+      {/* <section> */}
+      {/* <div className="_services-container" id="services">
+            <div className="tabs is-large _services">
+              <h2 className="title is-1">Services</h2>
+              <ul>
+                <li className="is-active">
+                  <a>Standard</a>
+                </li>
+                <li>
+                  <a>Premium</a>
+                </li>
+                <li>
+                  <a>Additional Services</a>
+                </li>
+              </ul>
             </div>
-            <button className="button is-large is-link">
-              BOOK THIS SERVICE
-            </button>
-          </div>
-        </div>
-        <div className="column"></div>
-      </div>
+          </div> */}
+      {/* Services carousel */}
+      {/* <div className="columns _service-carousel">
+            <div className="column">
+              <div>
+                <h3 className="title">
+                  From $30/hour (min 3 hours per visit apply)
+                </h3>
+                <div className="text-content">
+                  <p className="is-size-5">
+                    Every time we clean we provide these services.
+                  </p>
+
+                  <p className="is-size-5">
+                    Bathrooms, Tile walls, shower doors, vanity, sink, mirrors,
+                    and chrome fixtures, floors, carpets, toilets, windows
+                    sills, ledges, blinds and doors Kitchen & Eating area,
+                    Counter tops, range hood, drip pans or glass, sink and
+                    chrome, microwave, front of all appliances, cobwebs removed,
+                    floor damp mopped and general dusting.
+                  </p>
+
+                  <p className="is-size-5">
+                    Sleeping & leaving areas, Flat areas hand wiped, doors and
+                    door frames spot cleaned, picture frames, ceiling fans, lamp
+                    shades, intricate items, heavy knickknack areas, windows
+                    sills, ledges, blinds and more…
+                  </p>
+                </div>
+                <button className="button is-large is-link">
+                  BOOK THIS SERVICE
+                </button>
+              </div>
+            </div>
+            <div className="column"></div>
+          </div> */}
+      {/* </section> */}
       {/* End Services carousel */}
       {/* Reviews Banner */}
-      <section className="_reviews-container" id="reviews">
-        <div className="hero is-medium _reviews">
-          <div className="hero-body">
-            <div className="container">
-              <h2 className="button is-link">Reviews</h2>
+      {/* <section> */}
+      {/* <div className="_reviews-container" id="reviews">
+            <div className="hero is-medium _reviews">
+              <div className="hero-body">
+                <div className="container">
+                  <h2 className="button is-link">Reviews</h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </div> */}
       {/* End Reviews Banner */}
       {/* Reviews Content */}
-
-      <div className="_reviews_content">
-        <blockquote>
-          <h4 className="title">John Doe</h4>
-          <p>
-            I love what they do and for what it is woth I'm a Cancer patient and
-            it is very important to have and keep and clean environment. If you
-            need tomseone to clean your house or business I promise you will not
-            be disappointed with this company.
-          </p>
-        </blockquote>
-      </div>
+      {/* <div className="_reviews_content">
+            <blockquote>
+              <h4 className="title">John Doe</h4>
+              <p>
+                I love what they do and for what it is woth I'm a Cancer patient
+                and it is very important to have and keep and clean environment.
+                If you need tomseone to clean your house or business I promise
+                you will not be disappointed with this company.
+              </p>
+            </blockquote>
+          </div> */}
+      {/* </section> */}
       {/* End Reviews Content */}
       {/* Our Team */}
-      <div className="columns _about_our_team" id="aboutTeam">
-        <div className="column">
-          <div>
-            <h3 className="title">Know more about out team</h3>
-            <div className="text-content">
-              <p className="is-size-5">
-                We pride orselves with out team of trained, committed, filly
-                vetted and insured cleaners.
-              </p>
-              <p className="is-size-5">
-                Our cleaning team is trainied to meet high standars of cleaning,
-                managing households with the skill and experience our cleints
-                have come to expect.
-              </p>
-              <p className="is-size-5">
-                We deliver an outstanding service custom - tailored to each and
-                every one of our clients - bug or small
-              </p>
-              <p className="is-size-5">We will be happy to assist you!</p>
+      {/* <section>
+          <div className="columns _about_our_team" id="aboutTeam">
+            <div className="column">
+              <div>
+                <h3 className="title">Know more about out team</h3>
+                <div className="text-content">
+                  <p className="is-size-5">
+                    We pride orselves with out team of trained, committed, filly
+                    vetted and insured cleaners.
+                  </p>
+                  <p className="is-size-5">
+                    Our cleaning team is trainied to meet high standars of
+                    cleaning, managing households with the skill and experience
+                    our cleints have come to expect.
+                  </p>
+                  <p className="is-size-5">
+                    We deliver an outstanding service custom - tailored to each
+                    and every one of our clients - bug or small
+                  </p>
+                  <p className="is-size-5">We will be happy to assist you!</p>
+                </div>
+              </div>
             </div>
+            <div className="column"></div>
           </div>
-        </div>
-        <div className="column"></div>
-      </div>
+        </section> */}
       {/* End Our Team */}
       {/* Cards */}
-      <section className="_card-section">
-        <h4 className="title has-text-centered">
-          Book your cleaning service instantly below.{' '}
-          <span>We keep it as simple as...</span>
-        </h4>
-        <div className="columns">
-          <div className="column">
-            <div className="card">
-              <div className="card-content">
-                <span className="_icon">
-                  <img src="/images/choose_your_service.svg" alt="" />
-                </span>
-                <p className="title is-4">Choose your service</p>
-                <p className="subtitle is-4">
-                  Navigate easily through our website and choose the right
-                  service for You and Yor Home or business!
-                </p>
+      {/* <section className="_card-section">
+          <h4 className="title has-text-centered">
+            Book your cleaning service instantly below.{' '}
+            <span>We keep it as simple as...</span>
+          </h4>
+          <div className="columns">
+            <div className="column">
+              <div className="card">
+                <div className="card-content">
+                  <span className="_icon">
+                    <img src="/images/choose_your_service.svg" alt="" />
+                  </span>
+                  <p className="title is-4">Choose your service</p>
+                  <p className="subtitle is-4">
+                    Navigate easily through our website and choose the right
+                    service for You and Yor Home or business!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <div className="card-content">
+                  <span className="_icon">
+                    <img src="/images/book_with_us.svg" alt="" />
+                  </span>
+                  <p className="title is-4">Book with us</p>
+                  <p className="subtitle is-4">
+                    Use our handy menu to book a service on a convenient day and
+                    time.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <div className="card-content">
+                  <span className="_icon">
+                    <img src="/images/sit_relax.svg" alt="" />
+                  </span>
+                  <p className="title is-4">Sit Back and Relax</p>
+                  <p className="subtitle is-4">
+                    We will take care of the rest. All you have to do is enjoy
+                    your time off duty.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="column">
-            <div className="card">
-              <div className="card-content">
-                <span className="_icon">
-                  <img src="/images/book_with_us.svg" alt="" />
-                </span>
-                <p className="title is-4">Book with us</p>
-                <p className="subtitle is-4">
-                  Use our handy menu to book a service on a convenient day and
-                  time.
-                </p>
-              </div>
-            </div>
+          <div className="box has-text-centered">
+            <button className="button is-large is-primary">BOOK NOW</button>
           </div>
-          <div className="column">
-            <div className="card">
-              <div className="card-content">
-                <span className="_icon">
-                  <img src="/images/sit_relax.svg" alt="" />
-                </span>
-                <p className="title is-4">Sit Back and Relax</p>
-                <p className="subtitle is-4">
-                  We will take care of the rest. All you have to do is enjoy
-                  your time off duty.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="box has-text-centered">
-          <button className="button is-large is-primary">BOOK NOW</button>
-        </div>
-      </section>
+        </section> */}
       {/* End Cards */}
       {/* Footer */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="_footer">
           <div className="box">
             <div className="columns">
@@ -342,7 +423,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
       {/* End Footer */}
     </div>
   );

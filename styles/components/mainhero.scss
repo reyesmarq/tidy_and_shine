@@ -1,7 +1,29 @@
-._mainhero {
-  position: relative;
-  background: url('/images/hero_land.jpg') center / cover no-repeat;
+.__mainhero {
+  .navbar {
+    transition: 0.6s;
+    background-color: transparent !important;
 
+    &.sticky {
+      background: #fff !important;
+      box-shadow: 0 1px 10px $circle-background;
+      padding: 0;
+
+      .navbar-item {
+        border-bottom: none !important;
+      }
+    }
+
+    img {
+      width: 230px;
+      height: auto;
+    }
+  }
+
+  .hero-body {
+    position: relative;
+    background: url('/images/hero_land.jpg') center / cover no-repeat;
+    margin-top: 50px;
+  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -11,19 +33,62 @@
 @media screen and (min-width: $widescreen) {
 }
 @media screen and (min-width: $fullhd) {
-  ._mainhero {
-    height: 638px;
-    padding-top: 0 !important;
-    background: none;
-    
+  .__mainhero {
+    .navbar {
+      padding: 50px 235px 90px;
+
+      .navbar-end {
+        ._items {
+          .navbar-item {
+            border-bottom: 1px solid black;
+            transition: 0.3s;
+            color: black;
+
+            &:hover {
+              background: $link;
+              border-radius: 5px 5px 0 0;
+              color: white;
+            }
+          }
+        }
+
+        button.button {
+          border-radius: 0;
+          height: 25px;
+          font-size: 14px;
+          letter-spacing: 1px !important;
+        }
+      }
+    }
+
     .hero-body {
+      margin-top: 200px;
+      height: 638px;
+      padding-top: 0 !important;
       padding: 0 !important;
       padding-left: 235px !important;
+      color: black;
+      background: none !important;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 54%;
+        left: 39%;
+        background: url('/images/hero_land.jpg'),
+          linear-gradient(to right, transparent 89%, $primary 89%);
+        background-size: cover;
+        background-position: -120px, 0;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+      }
     }
 
     .title.is-1 {
-      line-height: 1.06 !important;
+      line-height: 1.05 !important;
       width: 280px;
+      color: inherit;
     }
 
     p.is-size-5 {
@@ -39,20 +104,6 @@
       height: 80px;
       padding: 20px;
       border-radius: 0;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 54%;
-      left: 39%;
-      background-image: url('/images/hero_land.jpg'),
-        linear-gradient(to right, transparent 89%, $primary 89%);
-      background-size: cover;
-      background-position: -120px, 0;
-      background-repeat: no-repeat;
-      background-blend-mode: multiply;
     }
   }
 }
