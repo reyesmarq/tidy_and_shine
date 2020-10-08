@@ -1,7 +1,8 @@
-import { getFontDefinitionFromNetwork } from 'next/dist/next-server/server/font-utils';
 import { useEffect, useState } from 'react';
+import navbar from '../pages/navbar';
 
 const Landing = () => {
+  let [burger, setBurger] = useState(false);
 
   // Effec to control the navbar at scroll
   useEffect(() => {
@@ -98,15 +99,23 @@ const Landing = () => {
             <div className="navbar-brand">
               <img src="/images/logo_hotizontal.svg" alt="Logo" />
               <span
-                className="navbar-burger burger"
+                className={
+                  burger
+                    ? 'navbar-burger burger is-active'
+                    : 'navbar-burger burger'
+                }
                 data-target="navbarMenuHeroA"
+                onClick={() => setBurger(!burger)}
               >
                 <span />
                 <span />
                 <span />
               </span>
             </div>
-            <div id="navbarMenuHeroA" className="navbar-menu">
+            <div
+              id="navbarMenuHeroA"
+              className={burger ? 'navbar-menu is-active' : 'navbar-menu'}
+            >
               <div className="navbar-end">
                 <div className="navbar-item _items">
                   <a className="navbar-item"> Home </a>
