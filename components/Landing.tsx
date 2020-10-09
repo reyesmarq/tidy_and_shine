@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Scrollspy from 'react-scrollspy';
 import Reviews from './Reviews';
 import Services from './Services';
 
@@ -8,14 +9,15 @@ const Landing = () => {
   // Effec to control the navbar at scroll
   useEffect(() => {
     const handleScrollY = () => {
-      var navbar = document.getElementById('navbar');
+      let navbar = document.getElementById('navbar');
+      let navHome = document.getElementById('navHome');
+
       navbar.classList.toggle('sticky', window.scrollY > 1);
+      navHome.classList.toggle('is-active', window.scrollY <= 0)
     };
     addEventListener('scroll', handleScrollY);
 
-    return () => {
-      removeEventListener('scroll', handleScrollY);
-    };
+    return () => removeEventListener('scroll', handleScrollY);
   }, []);
 
   // useEffect(() => {
@@ -93,8 +95,8 @@ const Landing = () => {
   // }, []);
 
   return (
-    <div className="_landing" id="home">
-      <section className="hero is-medium __mainhero">
+    <div className="_landing">
+      <section className="hero is-medium __mainhero" id="home">
         <div className="hero-head">
           <nav className="navbar is-fixed-top" id="navbar">
             <div className="navbar-brand">
@@ -105,7 +107,7 @@ const Landing = () => {
                     ? 'navbar-burger burger is-active'
                     : 'navbar-burger burger'
                 }
-                data-target="navbarMenuHeroA"
+                data-target="navbarBurgerMenu"
                 onClick={() => setBurger(!burger)}
               >
                 <span />
@@ -114,27 +116,42 @@ const Landing = () => {
               </span>
             </div>
             <div
-              id="navbarMenuHeroA"
+              id="navbarBurgerMenu"
               className={burger ? 'navbar-menu is-active' : 'navbar-menu'}
             >
               <div className="navbar-end">
-                <div className="navbar-item _items">
-                  <a href="#home" className="navbar-item">
+                <Scrollspy
+                  className="navbar-item _items"
+                  items={[
+                    'Home',
+                    'aboutUs',
+                    'services',
+                    'reviews',
+                    'aboutTeam',
+                  ]}
+                  currentClassName="is-active"
+                  componentTag="div"
+                >
+                  <a href="#home" className="navbar-item" id="navHome">
                     Home
                   </a>
+
                   <a href="#aboutUs" className="navbar-item">
                     About us
                   </a>
+
                   <a href="#services" className="navbar-item">
                     Services
                   </a>
+
                   <a href="#reviews" className="navbar-item">
                     Reviews
                   </a>
+
                   <a href="#aboutTeam" className="navbar-item">
                     About our team
                   </a>
-                </div>
+                </Scrollspy>
                 <div className="navbar-item">
                   <button className="button is-link">
                     <span>BOOKING</span>

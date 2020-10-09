@@ -32,17 +32,8 @@ const Reviews = () => {
 
   return (
     <div className="_reviews_content">
-      {/* <blockquote>
-        <h4 className="title">John Doe</h4>
-        <p>
-          I love what they do and for what it is woth I'm a Cancer patient and
-          it is very important to have and keep and clean environment. If you
-          need tomseone to clean your house or business I promise you will not
-          be disappointed with this company.
-        </p>
-      </blockquote> */}
       {reviewsData.map((r, i) => (
-        <blockquote className={i === curr ? 'is-active' : ''}>
+        <blockquote key={i} className={i === curr ? 'is-active' : ''}>
           <h4 className="title">{r.customerName}</h4>
           <p>{r.reviewContent}</p>
         </blockquote>

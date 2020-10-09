@@ -93,8 +93,8 @@ const Services = () => {
               {serviceBody.title}
             </h3>
             <div className="text-content">
-              {serviceBody.content.map((p) => (
-                <p className="is-size-5">{p}</p>
+              {serviceBody.content.map((p, i) => (
+                <p className="is-size-5" key={i}>{p}</p>
               ))}
             </div>
             <button className="button is-large is-link">

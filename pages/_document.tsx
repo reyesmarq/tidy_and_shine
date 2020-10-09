@@ -9,7 +9,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="es">
-        <Head />
+        <Head>
+          <link rel="shortcut icon" href="/images/logo_iso.svg" />
+        </Head>
         <body>
           <Main />
           <NextScript />
