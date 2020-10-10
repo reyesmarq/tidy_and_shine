@@ -1,21 +1,112 @@
 ._aboutus {
   margin-top: 0;
+
+  .column:nth-child(1) {
+    div {
+      width: 100%;
+      height: 100%;
+      margin-left: 10px;
+    }
+
+    button.button {
+      font-weight: bold;
+      color: $primary;
+      background: none;
+    }
+
+    p {
+      font-weight: lighter;
+      padding-left: 20px;
+      overflow-y: scroll;
+      height: 400px;
+      padding-right: 40px;
+      direction: rtl;
+      text-align: left;
+    }
+  }
+
   .column:nth-child(2) {
-    height: 400px;
-    background: url('/images/about_us.jpg') center / cover,
-      linear-gradient(to right, $primary 17%, transparent 17%);
-    background-blend-mode: multiply;
+    // height: 400px;
+    background: url('/images/about_us.jpg') center / cover;
+    clip-path: polygon(25% 0%, 97.5% 0%, 70% 100%, 0% 100%);
   }
 }
 
 @media screen and (min-width: $tablet) {
   ._aboutus {
-    flex-direction: row-reverse;
+    .column:nth-child(1) {
+      button.button {
+        border-radius: 0;
+        color: white;
+        background: $link;
+      }
+
+      p {
+        margin-top: 20px;
+      }
+    }
   }
 }
 @media screen and (min-width: $desktop) {
+  ._aboutus {
+    flex-direction: row-reverse;
+
+    .column:nth-child(1) {
+      div {
+        width: 100%;
+        height: 100%;
+      }
+
+      button.button {
+        font-weight: bold;
+        border-radius: 0;
+      }
+
+      p {
+        font-weight: lighter;
+        margin-top: 20px;
+        padding-left: 20px;
+        width: 550px;
+        overflow-y: scroll;
+        height: 400px;
+        padding-right: 40px;
+        direction: rtl;
+        text-align: left;
+      }
+    }
+
+    .column:nth-child(2) {
+      height: 550px;
+    }
+  }
 }
 @media screen and (min-width: $widescreen) {
+  ._aboutus {
+    .column:nth-child(1) {
+      div {
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+
+      button.button {
+        padding: 0 24px;
+        height: 80px;
+        font-size: 60px;
+      }
+
+      p {
+        margin-top: 50px;
+        padding-left: 28px;
+        font-size: $size-5 * 1.1 !important;
+        line-height: 1.23;
+        padding-right: 20px;
+      }
+    }
+
+    .column:nth-child(2) {
+      height: 600px;
+    }
+  }
 }
 
 @media screen and (min-width: $fullhd) {
@@ -23,32 +114,12 @@
     .column:nth-child(1) {
       div {
         padding-top: 114px;
-        padding-left: 65px !important;
-        width: 100%;
-        height: 100%;
+        padding-left: 65px;
       }
 
-      button.button {
-        font-weight: bold;
-        padding: 0 24px;
-        height: auto;
-        border-radius: 0;
-        height: 80px;
-        font-size: 60px;
-      }
-
-      p.is-size-5 {
-        font-weight: lighter;
-        margin-top: 50px;
-        padding-left: 28px;
-        font-size: $size-5 * 1.1 !important;
+      p {
         width: 440px;
-        line-height: 1.23;
-        overflow-y: scroll;
         height: 490px;
-        padding-right: 20px;
-        direction: rtl;
-        text-align: left;
       }
     }
 

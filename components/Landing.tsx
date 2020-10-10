@@ -20,7 +20,7 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="_landing">
+    <>
       <section className="hero is-medium __mainhero" id="home">
         <div className="hero-head">
           <nav className="navbar is-fixed-top" id="navbar">
@@ -117,7 +117,7 @@ const Landing = () => {
             of your home's Cleanliness while you do whatever you like with your
             free time!
           </p>
-          <button className="button is-large is-link is-size-2 mt-6">
+          <button className="button is-large is-link mt-6">
             FREE ESTIMATE
           </button>
         </div>
@@ -419,7 +419,7 @@ const Landing = () => {
         </div>
       </footer>
       {/* End Footer */}
-    </div>
+    </>
   );
 };
 
