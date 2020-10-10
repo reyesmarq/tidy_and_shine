@@ -26,14 +26,13 @@
   }
 
   .column:nth-child(2) {
-    // height: 400px;
-    background: url('/images/about_us.jpg') center / cover;
-    clip-path: polygon(25% 0%, 97.5% 0%, 70% 100%, 0% 100%);
+    display: none;
   }
 }
 
 @media screen and (min-width: $tablet) {
   ._aboutus {
+    flex-direction: row-reverse;
     .column:nth-child(1) {
       button.button {
         border-radius: 0;
@@ -45,11 +44,17 @@
         margin-top: 20px;
       }
     }
+
+    .column:nth-child(2) {
+      display: block;
+      background: url('/images/about_us.jpg') center / cover,
+        linear-gradient(to right, $primary 17%, transparent 17%);
+      background-blend-mode: multiply;
+    }
   }
 }
 @media screen and (min-width: $desktop) {
   ._aboutus {
-    flex-direction: row-reverse;
 
     .column:nth-child(1) {
       div {

@@ -1,5 +1,9 @@
 ._services-container {
-  background: radial-gradient(52vw 52vw at 5% 280%, $circle-background 50%, transparent 50%);
+  background: radial-gradient(
+    52vw 52vw at 5% 10%,
+    $circle-background 50%,
+    transparent 50%
+  );
 }
 
 ._services {
@@ -11,16 +15,87 @@
   }
 }
 
+._services {
+  flex-direction: column;
+  padding-top: 30px;
+
+  h2.title.is-1 {
+    text-align: center;
+  }
+
+  ul {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    
+    li {
+      &.is-active {
+        a {
+          color: $primary;
+        }
+      }
+
+      a {
+        font-weight: bold;
+        color: $link;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: $tablet) {
+  ._services-container {
+    background: radial-gradient(
+      52vw 52vw at 5% 50%,
+      $circle-background 50%,
+      transparent 50%
+    );
+  }
+  ._services {
+    ul {
+      flex-direction: row;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop) {
+  ._services-container {
+    background: radial-gradient(
+      52vw 52vw at 5% 150%,
+      $circle-background 50%,
+      transparent 50%
+    );
+  }
+
+  ._services {
+    padding-top: 30px;
+    flex-direction: row;
+
+    h2.title.is-1 {
+      margin-right: 30px;
+      padding-top: 10px;
+    }
+
+    ul {
+      li {
+        &.is-active {
+          a {
+            color: $primary;
+          }
+        }
+
+        a {
+          font-weight: bold;
+          font-size: 27px;
+          color: $link;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $widescreen) {
-}
-
-@media screen and (min-width: $fullhd) {
   ._services {
     padding-top: 30px;
     margin-top: -12px;
@@ -48,4 +123,7 @@
       }
     }
   }
+}
+
+@media screen and (min-width: $fullhd) {
 }

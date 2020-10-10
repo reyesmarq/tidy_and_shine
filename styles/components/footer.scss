@@ -95,11 +95,10 @@
           ._social-media {
             a {
               padding: 10px;
-              img {
-                width: 50px;
-
-                &.facebook-icon {
-                  width: 30px;
+              
+              span {
+                i {
+                  width: 100px;
                 }
               }
             }
