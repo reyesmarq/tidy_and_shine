@@ -21,8 +21,19 @@
 
   .hero-body {
     position: relative;
-    background: url('/images/hero_land.jpg') center / cover no-repeat;
+    color: white;
+    background: url('/images/hero_land.jpg') center / cover no-repeat, linear-gradient(-45deg, $link 40%, transparent 100%);
+    background-blend-mode: multiply;
     margin-top: 50px;
+
+    * {
+      color: inherit;
+    }
+
+    button.button {
+      font-weight: bold;
+      border-radius: 0;
+    }
   }
 }
 
@@ -31,6 +42,17 @@
 @media screen and (min-width: $desktop) {
 }
 @media screen and (min-width: $widescreen) {
+  .__mainhero {
+    .navbar {
+      padding: 0 20px;
+
+      .navbar-end {
+        button.button {
+          height: 24px;
+        }
+      }
+    }
+  }
 }
 @media screen and (min-width: $fullhd) {
   .__mainhero {
@@ -102,10 +124,10 @@
     }
 
     button.button {
+      color: white;
       font-weight: bold;
       height: 80px;
-      padding: 20px;
-      border-radius: 0;
+      padding: 15px;
     }
   }
 }
