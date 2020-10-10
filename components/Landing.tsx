@@ -13,86 +13,11 @@ const Landing = () => {
       let navHome = document.getElementById('navHome');
 
       navbar.classList.toggle('sticky', window.scrollY > 1);
-      navHome.classList.toggle('is-active', window.scrollY <= 0)
     };
     addEventListener('scroll', handleScrollY);
 
     return () => removeEventListener('scroll', handleScrollY);
   }, []);
-
-  // useEffect(() => {
-  //   // const handleScrollY = () => {
-  //   //   setScrollY(window.scrollY);
-  //   //   console.log(scrollY)
-  //   // };
-
-  //   window.addEventListener('scroll', () => {
-  //     // console.log('window.scrollY', window.scrollY);
-  //     // console.log('window.pageYOffset', window.pageYOffset);
-
-  //     // setScrollY(window.scrollY);
-  //     setScrollY(window.pageYOffset);
-
-  //     console.log(scrollY);
-  //   });
-
-  //   // return window.removeEventListener('scroll', handleScrollY);
-  // }, []);
-
-  // function logit() {
-  //   // setScrollY(window.pageYOffset);
-  //   setScrollY(window.scrollY);
-  //   console.log(scrollY)
-  //   var navbar = document.getElementById('mainNavbar');
-  //   if (scrollY != 0) {
-  //     navbar.classList.add('sticky')
-  //   } else {
-  //     navbar.classList.remove('sticky')
-  //   }
-
-  //   // navbar.classList.toggle('sticky', scrollY > 0);
-  // }
-
-  // useEffect(() => {
-  //   function watchScroll() {
-  //     window.addEventListener('scroll', logit);
-  //   }
-  //   watchScroll();
-  //   // return () => {
-  //   //   window.removeEventListener('scroll', logit);
-  //   // };
-  // });
-
-  // useEffect(() => {
-  //   let mainNavLinks = document.querySelectorAll(
-  //     'nav .navbar-menu .navbar-end .navbar-item a'
-  //   );
-
-  //   const handleScrollY: EventListener = () => {
-  //     let fromTop = window.scrollY;
-
-  //     mainNavLinks.forEach((link) => {
-  //       // @ts-ignore
-  //       let section = document.querySelector(link.hash);
-
-  //       if (
-  //         section.offsetTop <= fromTop &&
-  //         section.offsetTop + section.offsetHeight > fromTop
-  //       ) {
-  //         link.classList.add('is-active');
-  //       } else {
-  //         link.classList.remove('is-active');
-  //       }
-  //     });
-
-  //   }
-
-  //   window.addEventListener('scroll', handleScrollY);
-
-  //   return () => {
-  //     window.removeEventListener('scrol', handleScrollY)
-  //   }
-  // }, []);
 
   return (
     <div className="_landing">
@@ -100,7 +25,10 @@ const Landing = () => {
         <div className="hero-head">
           <nav className="navbar is-fixed-top" id="navbar">
             <div className="navbar-brand">
-              <img src="/images/logo_hotizontal.svg" alt="Logo" />
+              <img
+                src={require('../public/images/logo_hotizontal.svg')}
+                alt="Logo"
+              />
               <span
                 className={
                   burger
@@ -132,23 +60,44 @@ const Landing = () => {
                   currentClassName="is-active"
                   componentTag="div"
                 >
-                  <a href="#home" className="navbar-item" id="navHome">
+                  <a
+                    href="#home"
+                    className="navbar-item"
+                    id="navHome"
+                    onClick={() => setBurger(false)}
+                  >
                     Home
                   </a>
 
-                  <a href="#aboutUs" className="navbar-item">
+                  <a
+                    href="#aboutUs"
+                    className="navbar-item"
+                    onClick={() => setBurger(false)}
+                  >
                     About us
                   </a>
 
-                  <a href="#services" className="navbar-item">
+                  <a
+                    href="#services"
+                    className="navbar-item"
+                    onClick={() => setBurger(false)}
+                  >
                     Services
                   </a>
 
-                  <a href="#reviews" className="navbar-item">
+                  <a
+                    href="#reviews"
+                    className="navbar-item"
+                    onClick={() => setBurger(false)}
+                  >
                     Reviews
                   </a>
 
-                  <a href="#aboutTeam" className="navbar-item">
+                  <a
+                    href="#aboutTeam"
+                    className="navbar-item"
+                    onClick={() => setBurger(false)}
+                  >
                     About our team
                   </a>
                 </Scrollspy>
@@ -177,7 +126,7 @@ const Landing = () => {
       <section id="aboutUs">
         <div className="columns _aboutus">
           <div className="column">
-            <div>
+            <div className="_scroll-container">
               <button className="button is-large is-link">About us</button>
               <p className="is-size-5">
                 Do you search the internet for the best and most reliable
@@ -320,7 +269,11 @@ const Landing = () => {
             <div className="card">
               <div className="card-content">
                 <span className="icon">
-                  <img src="/images/choose_your_service.svg" alt="" />
+                  {/* <img src="/images/choose_your_service.svg" alt="" /> */}
+                  <img
+                    src={require('../public/images/choose_your_service.svg')}
+                    alt=""
+                  />
                 </span>
                 <p className="title is-4">Choose your service</p>
                 <p className="subtitle is-4">
@@ -334,7 +287,11 @@ const Landing = () => {
             <div className="card">
               <div className="card-content">
                 <span className="icon">
-                  <img src="/images/book_with_us.svg" alt="" />
+                  {/* <img src="/images/book_with_us.svg" alt="" /> */}
+                  <img
+                    src={require('../public/images/book_with_us.svg')}
+                    alt=""
+                  />
                 </span>
                 <p className="title is-4">Book with us</p>
                 <p className="subtitle is-4">
@@ -397,13 +354,21 @@ const Landing = () => {
                 <h4>Contact information</h4>
                 <div>
                   <span className="_icon">
-                    <img src="/images/phone_icon.svg" alt="" />
+                    {/* <img src="/images/phone_icon.svg" alt="" /> */}
+                    <img
+                      src={require('../public/images/phone_icon.svg')}
+                      alt=""
+                    />
                     <span>214-870-5638</span>
                   </span>
                 </div>
                 <div>
                   <span className="_icon">
-                    <img src="/images/phone_icon.svg" alt="" />
+                    {/* <img src="/images/mail_icon.svg" alt="" /> */}
+                    <img
+                      src={require('../public/images/mail_icon.svg')}
+                      alt=""
+                    />
                     <span>
                       <a href="mailto:tidyandshine.contact@gmail.com">
                         tidyandshine.contact@gmail.com
@@ -419,7 +384,8 @@ const Landing = () => {
               <div className="column"></div>
               <div className="column is-6 _logo">
                 <div className="_footer-logo">
-                  <img src="/images/logo_vertical.svg" />
+                  {/* <img src="/images/logo_vertical.svg" /> */}
+                  <img src={require('../public/images/logo_vertical.svg')} />
                 </div>
               </div>
               <div className="column _social-media-container">

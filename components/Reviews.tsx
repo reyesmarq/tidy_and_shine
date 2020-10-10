@@ -23,7 +23,6 @@ const Reviews = () => {
 
   const goToNext = () => {
     setCurr(curr === reviewsData.length - 1 ? 0 : curr + 1);
-    console.log(curr);
   };
 
   useEffect(() => {

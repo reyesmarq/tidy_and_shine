@@ -10,6 +10,8 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
+          {/* required meta for bulma */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="shortcut icon" href="/images/logo_iso.svg" />
         </Head>
         <body>

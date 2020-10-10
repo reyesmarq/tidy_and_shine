@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 
-let services = [
+interface Service {
+  id: string;
+  img: string;
+  title: string;
+  content: Array<string>;
+}
+
+let services: Array<Service> = [
   {
-    id: 'standard',
+    id: 'Standard',
     title: 'From $30/hour (min 3 hours per visit apply)',
     img: 'Standard.jpg',
     content: [
@@ -12,7 +19,7 @@ let services = [
     ],
   },
   {
-    id: 'premium',
+    id: 'Premium',
     title: 'Premium From $40/hour (min 3 hours per visit apply)',
     img: 'Premium.jpg',
     content: [
@@ -22,7 +29,7 @@ let services = [
     ],
   },
   {
-    id: 'additionalServices',
+    id: 'Additional Services',
     title: 'Additional Services  From $25/hour (min 3 hours per visit apply)',
     img: 'Extra.jpg',
     content: [
@@ -48,64 +55,56 @@ let services = [
 ];
 
 const Services = () => {
-  let [service, setService] = useState('standard');
-  let [serviceBody, setServiceBody] = useState<{
-    id: string;
-    img: string,
-    title: string;
-    content: Array<string>;
-  }>({ id: '', title: '', img: '', content: [] });
-
-  useEffect(() => {
-    setServiceBody(services.filter((s) => s.id === service)[0]);
-
-    console.log(serviceBody);
-    // console.log(serviceBody != null ? serviceBody.content.map(c => console.log(c)) : '');
-  }, [service]);
-
-  const handleClick = (e) => {
-    setService(e.target.id);
-  };
+  let [service, setService] = useState(0);
 
   return (
     <>
       <div className="_services-container">
         <div className="tabs is-large _services">
           <h2 className="title is-1">Services</h2>
-          <ul onClick={(e) => handleClick(e)}>
-            <li className="is-active">
-              <a id="standard">Standard</a>
-            </li>
-            <li>
-              <a id="premium">Premium</a>
-            </li>
-            <li>
-              <a id="additionalServices">Additional Services</a>
-            </li>
+          <ul>
+            {services.map((_service, index) => (
+              <li
+                className="is-active"
+                key={index}
+                onClick={() => setService(index)}
+              >
+                <a>{_service.id}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      <div className="columns _service-carousel">
-        <div className="column">
-          <div>
-            <h3 className="title">
-              {/* From $30/hour (min 3 hours per visit apply) */}
-              {serviceBody.title}
-            </h3>
-            <div className="text-content">
-              {serviceBody.content.map((p, i) => (
-                <p className="is-size-5" key={i}>{p}</p>
-              ))}
+      <div className="_service-carousel-container">
+        {services.map((_service, i) => (
+          <div
+            key={i}
+            className={
+              service === i
+                ? 'columns _service-carousel is-active'
+                : 'columns _service-carousel'
+            }
+          >
+            <div className="column">
+              <div>
+                <h3 className="title">{_service.title}</h3>
+                <div className="text-content">
+                  {_service.content.map((p, i) => (
+                    <p className="is-size-5" key={i}>
+                      {p}
+                    </p>
+                  ))}
+                </div>
+                <button className="button is-large is-link">
+                  BOOK THIS SERVICE
+                </button>
+              </div>
             </div>
-            <button className="button is-large is-link">
-              BOOK THIS SERVICE
-            </button>
+            <div className="column">
+              <img src={`/images/${_service.img}`} alt="" />
+            </div>
           </div>
-        </div>
-        {/* <div className="column"> */}
-        <div className="column">
-          <img src={`/images/${serviceBody.img}`} alt="" />
-        </div>
+        ))}
       </div>
     </>
   );
