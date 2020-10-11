@@ -18,6 +18,7 @@ const Landing = () => {
     return () => removeEventListener('scroll', handleScrollY);
   }, []);
 
+  // Effect to control spy navbar
   useEffect(() => {
     let home = document.getElementById('home');
     let aboutUs = document.getElementById('aboutUs');
@@ -85,17 +86,17 @@ const Landing = () => {
               className={burger ? 'navbar-menu is-active' : 'navbar-menu'}
             >
               <div className="navbar-end">
-                <Scrollspy
+                <div
                   className="navbar-item _items"
-                  items={[
-                    'Home',
-                    'aboutUs',
-                    'services',
-                    'reviews',
-                    'aboutTeam',
-                  ]}
+                  // items={[
+                  //   'Home',
+                  //   'aboutUs',
+                  //   'services',
+                  //   'reviews',
+                  //   'aboutTeam',
+                  // ]}
                   // currentClassName="is-active"
-                  componentTag="div"
+                  // componentTag="div"
                 >
                   <a
                     href="#home"
@@ -141,7 +142,7 @@ const Landing = () => {
                   >
                     About our team
                   </a>
-                </Scrollspy>
+                </div>
                 <div className="navbar-item">
                   <button className="button is-link">
                     <span>BOOKING</span>

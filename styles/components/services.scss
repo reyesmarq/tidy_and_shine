@@ -32,7 +32,7 @@
     li {
       &.is-active {
         a {
-          color: $primary;
+          border-bottom: 1px solid $link !important;
         }
       }
 

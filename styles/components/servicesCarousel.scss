@@ -1,15 +1,14 @@
-._service-carousel-container {
-
+.__service-carousel-container {
   ._service-carousel {
     .column:nth-child(2) {
       // height: 400px;
       // background: url('/images/Standard.jpg') center / cover,
       //   linear-gradient(to right, $primary 28%, transparent 28%);
       // background-blend-mode: multiply;
-  
+
       position: relative;
       padding: 0;
-  
+
       &::before {
         content: '';
         height: 100%;
@@ -17,7 +16,7 @@
         position: absolute;
         background: linear-gradient(to right, $primary 17%, transparent 17%);
       }
-  
+
       img {
         width: 100%;
         height: 100%;
@@ -28,6 +27,95 @@
   }
 }
 
+._service-carousel-container {
+  position: relative;
+  margin-bottom: 700px;
+
+  ._service-carousel {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    margin-top: 0px;
+    opacity: 0;
+    transition: 0.3s ease;
+
+    &.is-active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .column:nth-child(1) {
+      margin-top: -170px;
+      z-index: 10;
+      div {
+        // padding-top: 45px;
+        // padding-left: 60px !important;
+        // width: 100%;
+        // height: 100%;
+      }
+
+      h3.title {
+        // padding-top: 50px;
+        // padding-bottom: 50px;
+        font-weight: bold;
+        padding-left: 10px;
+        color: $link;
+        margin-bottom: 100px;
+      }
+
+      .text-content {
+        padding: 20px 0 0 20px !important;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        // width: 470px;
+        height: 380px;
+        overflow-y: scroll;
+        direction: rtl;
+        text-align: left;
+      }
+
+      p.is-size-5 {
+        font-weight: lighter;
+        font-size: $size-5 * 1.1 !important;
+        margin-bottom: 20px;
+        line-height: 1.23;
+        direction: rtl;
+        text-align: left;
+      }
+
+      button.button {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        padding: 0 15px;
+        border-radius: 0;
+        height: 40px;
+      }
+    }
+
+    .column:nth-child(2) {
+      position: relative;
+      padding: 0;
+      height: 200px;
+
+      &::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: rgba($color: black, $alpha: .6);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
 
 @media screen and (min-width: $tablet) {
   ._service-carousel {
@@ -47,19 +135,18 @@
   ._service-carousel-container {
     position: relative;
     height: 678px;
-    
 
     ._service-carousel {
       position: absolute;
       margin-top: 0px;
       opacity: 0;
-      transition: .3s ease;
+      transition: 0.3s ease;
 
       &.is-active {
         opacity: 1;
         z-index: 10;
       }
-  
+
       .column:nth-child(1) {
         div {
           padding-top: 45px;
@@ -67,14 +154,14 @@
           width: 100%;
           height: 100%;
         }
-  
+
         h3.title {
           font-weight: bold;
           padding-left: 10px;
           color: $link;
           font-size: 25px;
         }
-  
+
         .text-content {
           padding: 20px 0 0 35px !important;
           margin-left: 10px;
@@ -84,7 +171,7 @@
           direction: rtl;
           text-align: left;
         }
-  
+
         p.is-size-5 {
           font-weight: lighter;
           font-size: $size-5 * 1.1 !important;
@@ -93,7 +180,7 @@
           direction: rtl;
           text-align: left;
         }
-  
+
         button.button {
           margin-top: 90px;
           margin-left: 150px;
@@ -104,7 +191,7 @@
           height: 40px;
         }
       }
-  
+
       .column:nth-child(2) {
         height: 690px;
       }
