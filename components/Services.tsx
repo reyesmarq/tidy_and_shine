@@ -65,7 +65,7 @@ const Services = () => {
           <ul>
             {services.map((_service, index) => (
               <li
-                className="is-active"
+                className={service === index ? 'is-active' : ''}
                 key={index}
                 onClick={() => setService(index)}
               >
