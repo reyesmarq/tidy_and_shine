@@ -10,7 +10,6 @@ const Landing = () => {
   useEffect(() => {
     const handleScrollY = () => {
       let navbar = document.getElementById('navbar');
-      let navHome = document.getElementById('navHome');
 
       navbar.classList.toggle('sticky', window.scrollY > 1);
     };
@@ -18,6 +17,44 @@ const Landing = () => {
 
     return () => removeEventListener('scroll', handleScrollY);
   }, []);
+
+  useEffect(() => {
+    let home = document.getElementById('home');
+    let aboutUs = document.getElementById('aboutUs');
+    let services = document.getElementById('services');
+    let reviews = document.getElementById('reviews');
+    let aboutTeam = document.getElementById('aboutTeam');
+
+    addEventListener('scroll', () => {
+      let win = window.pageYOffset;
+      if (aboutUs.offsetTop <= win && services.offsetTop > win) {
+        document.getElementById('nav-aboutUs').classList.add('is-active')
+        document.getElementById('nav-services').classList.remove('is-active')
+        document.getElementById('nav-reviews').classList.remove('is-active')
+        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+      } else if (services.offsetTop <= win && reviews.offsetTop > win) {
+        document.getElementById('nav-aboutUs').classList.remove('is-active')
+        document.getElementById('nav-services').classList.add('is-active')
+        document.getElementById('nav-reviews').classList.remove('is-active')
+        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+      } else if (reviews.offsetTop <= win && aboutTeam.offsetTop > win) {
+        document.getElementById('nav-aboutUs').classList.remove('is-active')
+        document.getElementById('nav-services').classList.remove('is-active')
+        document.getElementById('nav-reviews').classList.add('is-active')
+        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+      } else if (aboutTeam.offsetTop <= win) {
+        document.getElementById('nav-aboutUs').classList.remove('is-active')
+        document.getElementById('nav-services').classList.remove('is-active')
+        document.getElementById('nav-reviews').classList.remove('is-active')
+        document.getElementById('nav-aboutTeam').classList.add('is-active')
+      } else {
+        document.getElementById('nav-aboutUs').classList.remove('is-active')
+        document.getElementById('nav-services').classList.remove('is-active')
+        document.getElementById('nav-reviews').classList.remove('is-active')
+        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+      }
+    });
+  });
 
   return (
     <>
@@ -57,14 +94,14 @@ const Landing = () => {
                     'reviews',
                     'aboutTeam',
                   ]}
-                  currentClassName="is-active"
+                  // currentClassName="is-active"
                   componentTag="div"
                 >
                   <a
                     href="#home"
                     className="navbar-item"
-                    id="navHome"
                     onClick={() => setBurger(false)}
+                    id="nav-home"
                   >
                     Home
                   </a>
@@ -73,6 +110,7 @@ const Landing = () => {
                     href="#aboutUs"
                     className="navbar-item"
                     onClick={() => setBurger(false)}
+                    id="nav-aboutUs"
                   >
                     About us
                   </a>
@@ -81,6 +119,7 @@ const Landing = () => {
                     href="#services"
                     className="navbar-item"
                     onClick={() => setBurger(false)}
+                    id="nav-services"
                   >
                     Services
                   </a>
@@ -89,6 +128,7 @@ const Landing = () => {
                     href="#reviews"
                     className="navbar-item"
                     onClick={() => setBurger(false)}
+                    id="nav-reviews"
                   >
                     Reviews
                   </a>
@@ -97,6 +137,7 @@ const Landing = () => {
                     href="#aboutTeam"
                     className="navbar-item"
                     onClick={() => setBurger(false)}
+                    id="nav-aboutTeam"
                   >
                     About our team
                   </a>
