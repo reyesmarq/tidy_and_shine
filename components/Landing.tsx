@@ -295,7 +295,7 @@ const Landing = () => {
         <div className="columns _about_our_team">
           <div className="column">
             <div>
-              <h3 className="title">Know more about out team</h3>
+              <h3 className="title">Know more about our team</h3>
               <div className="text-content">
                 <p className="is-size-5">
                   We pride orselves with out team of trained, committed, filly

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 interface Service {
   id: string;
@@ -33,23 +33,23 @@ let services: Array<Service> = [
     title: 'Additional Services  From $25/hour (min 3 hours per visit apply)',
     img: 'Extra.jpg',
     content: [
-      'Office Cleaning You chase your Professional goals,we will chase away the office germs and dust!',
+      'Office Cleaning You chase your Professional goals, we will chase away the office germs and dust',
       'After Building Cleaning',
       'We can take care of the mess the builders left with ease',
       'Holiday Rental Cleaning',
       'Have your AirBnB rental cleaned and prepared for your next guest',
       'End of tenancy cleaning',
-      'Winning that Security deposit is a piece of cake!',
+      'Winning that Security deposit is a piece of cake',
       'Heavy Duty Cleaning',
-      'Don’t Sweat Get the experience of getting years of dirt out of your House!',
+      'Don’t Sweat Get the experience of getting years of dirt out of your House',
       'Oven Cleanin',
-      'Everything tastes better when cooked in a clean oven!',
+      'Everything tastes better when cooked in a clean oven',
       'Fridge Cleaning',
       "Let 's get it Done",
-      'Wash and Fold Laundry Servic',
-      'We will make it easy for you.',
+      'Wash and Fold Laundry Service',
+      'We will make it easy for you',
       'Organizer Service',
-      'Be ready to clear out the clutter in your life!',
+      'Be ready to clear out the clutter in your life',
     ],
   },
 ];
