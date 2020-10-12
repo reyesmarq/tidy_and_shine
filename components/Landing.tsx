@@ -6,6 +6,7 @@ import Services from './Services';
 
 const Landing = () => {
   let [burger, setBurger] = useState(false);
+  let [bookingModal, setBookingModal] = useState(false);
 
   // Effec to control the navbar at scroll
   useEffect(() => {
@@ -30,30 +31,43 @@ const Landing = () => {
     addEventListener('scroll', () => {
       let win = window.pageYOffset;
       if (aboutUs.offsetTop <= win && services.offsetTop > win) {
-        document.getElementById('nav-aboutUs').classList.add('is-active')
-        document.getElementById('nav-services').classList.remove('is-active')
-        document.getElementById('nav-reviews').classList.remove('is-active')
-        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+        document.getElementById('nav-aboutUs').classList.add('is-active');
+        document.getElementById('nav-services').classList.remove('is-active');
+        document.getElementById('nav-reviews').classList.remove('is-active');
+        document.getElementById('nav-aboutTeam').classList.remove('is-active');
       } else if (services.offsetTop <= win && reviews.offsetTop > win) {
-        document.getElementById('nav-aboutUs').classList.remove('is-active')
-        document.getElementById('nav-services').classList.add('is-active')
-        document.getElementById('nav-reviews').classList.remove('is-active')
-        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+        document.getElementById('nav-aboutUs').classList.remove('is-active');
+        document.getElementById('nav-services').classList.add('is-active');
+        document.getElementById('nav-reviews').classList.remove('is-active');
+        document.getElementById('nav-aboutTeam').classList.remove('is-active');
       } else if (reviews.offsetTop <= win && aboutTeam.offsetTop > win) {
-        document.getElementById('nav-aboutUs').classList.remove('is-active')
-        document.getElementById('nav-services').classList.remove('is-active')
-        document.getElementById('nav-reviews').classList.add('is-active')
-        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+        document.getElementById('nav-aboutUs').classList.remove('is-active');
+        document.getElementById('nav-services').classList.remove('is-active');
+        document.getElementById('nav-reviews').classList.add('is-active');
+        document.getElementById('nav-aboutTeam').classList.remove('is-active');
       } else if (aboutTeam.offsetTop <= win) {
-        document.getElementById('nav-aboutUs').classList.remove('is-active')
-        document.getElementById('nav-services').classList.remove('is-active')
-        document.getElementById('nav-reviews').classList.remove('is-active')
-        document.getElementById('nav-aboutTeam').classList.add('is-active')
+        document.getElementById('nav-aboutUs').classList.remove('is-active');
+        document.getElementById('nav-services').classList.remove('is-active');
+        document.getElementById('nav-reviews').classList.remove('is-active');
+        document.getElementById('nav-aboutTeam').classList.add('is-active');
       } else {
-        document.getElementById('nav-aboutUs').classList.remove('is-active')
-        document.getElementById('nav-services').classList.remove('is-active')
-        document.getElementById('nav-reviews').classList.remove('is-active')
-        document.getElementById('nav-aboutTeam').classList.remove('is-active')
+        document.getElementById('nav-aboutUs').classList.remove('is-active');
+        document.getElementById('nav-services').classList.remove('is-active');
+        document.getElementById('nav-reviews').classList.remove('is-active');
+        document.getElementById('nav-aboutTeam').classList.remove('is-active');
+      }
+    });
+  });
+
+  useEffect(() => {
+    addEventListener('keydown', (e) => {
+      let modalIsActive = document
+        .getElementById('bookingModal')
+        .classList.contains('is-active');
+      let isEscape = e.code === 'Escape';
+
+      if (modalIsActive && isEscape) {
+        setBookingModal(false);
       }
     });
   });
@@ -145,7 +159,10 @@ const Landing = () => {
                   </a>
                 </div>
                 <div className="navbar-item">
-                  <button className="button is-link">
+                  <button
+                    className="button is-link"
+                    onClick={() => setBookingModal(true)}
+                  >
                     <span>BOOKING</span>
                   </button>
                 </div>
@@ -203,7 +220,7 @@ const Landing = () => {
       {/* End About us */}
       {/* Services */}
       <section id="services">
-        <Services />
+        <Services modalHandler={setBookingModal} />
         {/* <div className="_services-container">
           <div className="tabs is-large _services">
             <h2 className="title is-1">Services</h2>
@@ -360,7 +377,12 @@ const Landing = () => {
           </div>
         </div>
         <div className="box has-text-centered">
-          <button className="button is-large is-primary">BOOK NOW</button>
+          <button
+            className="button is-large is-primary"
+            onClick={() => setBookingModal(true)}
+          >
+            BOOK NOW
+          </button>
         </div>
       </section>
       {/* End Cards */}
@@ -433,22 +455,22 @@ const Landing = () => {
               </div>
               <div className="column _social-media-container">
                 <div className="_social-media">
-                  <a href="">
+                  <a href="https://www.facebook.com/tidyandshine/" target="_blank">
                     <span className="icon has-text-white">
                       <i className="fab fa-facebook-f fa-2x" />
                     </span>
                   </a>
-                  <a href="">
+                  <a href="https://twitter.com/TidyandShine?s=09" target="_blank">
                     <span className="icon has-text-white">
                       <i className="fab fa-twitter fa-2x" />
                     </span>
                   </a>
-                  <a href="">
+                  <a href="https://www.instagram.com/tidyandshine/?igshid=1q1oe9xamwxhe" target="_blank">
                     <span className="icon has-text-white">
                       <i className="fab fa-instagram fa-2x" />
                     </span>
                   </a>
-                  <a href="">
+                  <a href="https://www.yelp.com/biz/tidy-and-shine-grand-prairie-2" target="_blank">
                     <span className="icon has-text-white">
                       <i className="fab fa-yelp fa-2x" />
                     </span>
@@ -467,6 +489,25 @@ const Landing = () => {
         </div>
       </footer>
       {/* End Footer */}
+      <div
+        id="bookingModal"
+        className={bookingModal ? 'modal is-active' : 'modal'}
+      >
+        <div className="modal-background" />
+        <div className="modal-content">
+          <p className="image is-4by3">
+            <img
+              src="/images/UnderConstruction_01.png"
+              alt=""
+            />
+          </p>
+        </div>
+        <button
+          className="modal-close is-large"
+          aria-label="close"
+          onClick={() => setBookingModal(false)}
+        />
+      </div>
     </>
   );
 };

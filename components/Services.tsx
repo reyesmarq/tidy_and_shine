@@ -54,7 +54,11 @@ let services: Array<Service> = [
   },
 ];
 
-const Services = () => {
+interface Props {
+  modalHandler,
+}
+
+const Services: React.FC<Props> = ({modalHandler}) => {
   let [service, setService] = useState(0);
 
   return (
@@ -95,7 +99,7 @@ const Services = () => {
                     </p>
                   ))}
                 </div>
-                <button className="button is-large is-link">
+                <button className="button is-large is-link" onClick={modalHandler}>
                   BOOK THIS SERVICE
                 </button>
               </div>
