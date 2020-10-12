@@ -1,11 +1,130 @@
 .footer {
-  background: radial-gradient(52vw 52vw at 90% 110%, $link 50%, transparent 50%);
+  background: radial-gradient(52vw 52vw at 90% 90%, $link 50%, transparent 50%);
+}
+
+._footer {
+  margin: 0 auto;
+  margin-top: 12px;
+  width: 72%;
+
+  .box {
+    .columns {
+      height: auto;
+
+      .column._menu {
+        padding-top: 85px;
+
+        .menu {
+          ul.menu-list {
+            li {
+              a {
+                font-size: 20px;
+                padding-bottom: 5px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+      .column._contact_information {
+        padding-top: 85px;
+
+        h4 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        div {
+          display: flex;
+          flex-direction: row;
+
+          ._icon {
+            margin: 10px;
+
+            img {
+              width: 30px;
+              margin-right: 25px;
+              vertical-align: middle;
+            }
+
+            span {
+              vertical-align: middle;
+              font-size: 20px;
+              font-weight: lighter;
+
+              a {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+
+      .column._logo {
+        border-bottom: 2px solid $link;
+        margin-bottom: 10px;
+
+        ._footer-logo {
+          max-width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+
+          img {
+            // display: block;
+          }
+        }
+      }
+
+      ._social-media-container {
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ._social-media {
+          a {
+            padding: 10px;
+
+            span {
+              i {
+                width: 100px;
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $tablet) {
+  .column._logo {
+    border-bottom: 2px solid $link;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    ._footer-logo {
+      max-width: 200px;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop) {
+  ._social-media-container {
+    ._social-media {
+      a {
+        span {
+          i {
+            width: 100px;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $widescreen) {
@@ -20,7 +139,7 @@
     .box {
       .columns {
         height: auto;
-        
+
         .column._menu {
           padding-top: 85px;
 
@@ -95,10 +214,11 @@
           ._social-media {
             a {
               padding: 10px;
-              
+
               span {
                 i {
                   width: 100px;
+                  color: white;
                 }
               }
             }

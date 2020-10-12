@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Landing from '../components/Landing';
+import Skeleton from 'react-loading-skeleton';
 
 const IndexPage = () => {
   return (

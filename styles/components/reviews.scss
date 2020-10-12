@@ -1,10 +1,136 @@
 ._reviews-container {
-  background: url('/images/reviews.jpg') center / cover;
+  .hero-body {
+    // height: 100px;
+    // margin-bottom: 30px;
+
+    .container {
+      h2.button {
+        // margin-top: 240px;
+        font-weight: bold;
+        // padding: 0 24px;
+        // height: auto;
+        border-radius: 0;
+        background: none;
+        color: black;
+        padding: 0;
+        height: 80px;
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+._reviews_content {
+  position: relative;
+  // margin-top: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 55px;
+  // width: 60%;
+  box-shadow: inset 10px 0 $link;
+  height: 300px;
+  background-color: $circle-background;
+}
+blockquote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  // padding-top: 20px;
+
+  padding-left: 15px;
+  transition: 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  h4.title {
+    // font-size: 60px;
+  }
+
+  p {
+    // margin-top: -10px;
+    font-weight: lighter;
+    // font-size: $size-5 * 1.1 !important;
+    // margin-bottom: 20px;
+    // line-height: 1.23;
+  }
 }
 
 @media screen and (min-width: $tablet) {
 }
 @media screen and (min-width: $desktop) {
+  ._reviews-container {
+    background: url('/images/reviews.jpg') center / cover;
+    margin-top: 12px;
+    height: 420px;
+    background-position: 0 36%;
+
+    .hero-body {
+      height: 470px;
+      margin-bottom: 30px;
+
+      .container {
+        h2.button {
+          // margin-top: 240px;
+          font-weight: bold;
+          padding: 0 24px;
+          height: auto;
+          border-radius: 0;
+          background: $link;
+          color: white;
+          height: 80px;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+  ._reviews_content {
+    position: relative;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+    width: 60%;
+    box-shadow: inset 35px 0 $link;
+    height: 300px;
+    background-color: $circle-background;
+  }
+  blockquote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding-top: 35px;
+    padding-right: 60px;
+    padding-left: 100px;
+    transition: 1s ease;
+
+    &.is-active {
+      opacity: 1;
+    }
+
+    h4.title {
+      font-size: 60px;
+    }
+
+    p {
+      margin-top: -10px;
+      font-weight: lighter;
+      font-size: $size-5 * 1.1 !important;
+      margin-bottom: 20px;
+      line-height: 1.23;
+    }
+  }
 }
 @media screen and (min-width: $widescreen) {
 }

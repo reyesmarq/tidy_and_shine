@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import Scrollspy from 'react-scrollspy';
 import Reviews from './Reviews';
 import Services from './Services';
@@ -422,7 +423,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="box">
-            <div className="columns">
+            <div className="columns is-desktop">
               <div className="column"></div>
               <div className="column is-6 _logo">
                 <div className="_footer-logo">
@@ -445,6 +446,11 @@ const Landing = () => {
                   <a href="">
                     <span className="icon has-text-white">
                       <i className="fab fa-instagram fa-2x" />
+                    </span>
+                  </a>
+                  <a href="">
+                    <span className="icon has-text-white">
+                      <i className="fab fa-yelp fa-2x" />
                     </span>
                   </a>
                 </div>
