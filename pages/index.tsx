@@ -6,7 +6,7 @@ const IndexPage = () => {
   return (
     <main>
       <Head>
-        <title>Tidy and Shine | landing page</title>
+        <title>Tidy and Shine</title>
         <meta
           name="description"
           content="This is the description of the landing page"
